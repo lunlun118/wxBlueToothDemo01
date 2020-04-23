@@ -1,0 +1,31 @@
+<!--pages/lanyatest/lanyatest.wxml-->
+<view class="contentview">
+ 
+  <view  class='myview'>
+    <text>
+      {{info}}
+    </text>
+ 
+  </view>
+ 
+  <button type="primary" class="button" bindtap="lanyatest1">1初始化蓝牙</button>
+  <button type="primary" class="button" bindtap="lanyatest2">2获取蓝牙状态</button>
+  <button type="primary" class="button" bindtap="lanyatest3">3搜索周边设备</button>
+  <button type="primary" class="button" bindtap="lanyatest4">4获取所有设备</button>
+  <!--<button type="primary" class="button" bindtap="onBluetoothDeviceFound">5发现设备提示</button>-->
+  <block wx:for="{{devices}}" wx:key="deviceId">
+      <button type="primary" class="button" id="{{item.deviceId}}" style='background-color:red' bindtap="lanyaconnect">5连接{{item.name}}</button>
+  </block>
+  <button type="primary" class="button" bindtap="lanyatest6">6停止搜索周边蓝牙设备</button>
+  <button type="primary" class="button" bindtap="lanyatest7">7获取所有service</button>
+  <button type="primary" class="button" bindtap="lanyatest8">8获取所有特征值</button>
+  <button type="primary" class="button" bindtap="lanyatest9">9启用特征值变化notify</button>
+  <button type="primary" class="button" bindtap="lanyatest10">10接收蓝牙返回消息</button>
+  <view class="section">
+  <input placeholder='请输入要发送的信息' bindinput='getmsg'/>
+  </view>
+  <button type="primary" class="button" bindtap="lanyatest11">11微信发送消息</button>
+  <button type="primary" class="button" bindtap="lanyatest12">12断开蓝牙设备</button>
+  
+  
+</view> 
